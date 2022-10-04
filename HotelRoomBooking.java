@@ -85,17 +85,17 @@ public class HotelRoomBooking {
 
 				System.out.println("Please select one of the options.");
 				System.out.println("1: Book A New Room.");
-
+				System.out.println("2: Checkin date:");
 				//System.out.println("2: Display Empty Rooms.");
 
-				System.out.println("2: View all Rooms.");
+				System.out.println("3: View all Rooms.");
 
-				System.out.println("3: Find room from customer name.");
+				System.out.println("4: Find room from customer name.");
 				//System.out.println("4: Find room from room number");
 
 				System.out.println("5: Cancel a Room.");
 				System.out.println("6: Vacate a Room.");
-				System.out.println("7: checkin date and checkout date");
+				
 				//System.out.println("-------------------------------------------------------");
 				int roomNum= 0;
 				String Selection = input.next();
@@ -104,31 +104,32 @@ public class HotelRoomBooking {
 				case "1":
 					process.BookaRoom(myHotel, roomNum);
 					break;
+				case "2":
+					process.DateCheckin();
+					break;
 				/*	break;
 				case "2":
 					process.CheckIfEmpty(myHotel);
 					break;*/
-				case "2":
+				case "3":
 					process.ViewAllRooms(myHotel);
 					break;
 				/*case "5":
 					process.DeleteCustomerFromRoom(myHotel, roomNum);
 					break;*/
-				case "3":
+				case "4":
 				process.FindRoomFromCustomerName(myHotel);
 					break;
-				case "4":
-					process.FindRoomNumber();
-					break;
+				//case "4":
+					//process.FindRoomNumber();
+					//break;
 				case "5":
 					process.Cancel();
 					break;
 				case "6":
 					process.Vacate();
 					break;
-				case "7":
-					process.DateCheckin();
-					break;
+				
 					
     
 				//case "V":

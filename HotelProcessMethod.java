@@ -62,14 +62,14 @@ public class HotelProcessMethod {
         
         System.out.println("Enter name for room " + (roomNumber + 1) + " :");
         roomName = input.next();
-        int phone_number;
+        Long phone_number;
         
         System.out.println("Enter your phone number ");
         
-        phone_number=input.nextInt();
-        int id;
-        System.out.println("Your Customer id is: ");
-        id=input.nextInt();
+        phone_number=input.nextLong();
+       String id;
+        System.out.println("Your Aadhar card number: ");
+        id=input.next();
         String address;
         System.out.println("Enter your Address ");
         address=input.nextLine();
@@ -180,14 +180,18 @@ void FindRoomFromRoomNumber(Room[] myHotel) {
     void Cancel() {
     	int key;
     	Scanner sc=new Scanner(System.in);
-    	System.out.println("Do you want to cancel the booked room :Press one");
+    	System.out.println("Do you want to cancel the booked room : press 1");
     	key=sc.nextInt();
-    	System.out.println("Room Cancelled Successfully");
+    	//System.out.println("Room Cancelled Successfully");
     	
     	//System.out.println("Enter the correct number");
-    	if(key!=roomNumber) {
-    	System.out.println();
-    	//Cancel();
+    	if(key==roomNumber) {
+    		System.out.println("Room Cancelled Successfully");
+    	}
+    	else {
+    		System.out.println("Enter the correct room no: ");
+    	//System.out.println();
+    	Cancel();
     }
     }
     void DateCheckin() throws ParseException {
@@ -207,12 +211,18 @@ void FindRoomFromRoomNumber(Room[] myHotel) {
     		
     		
     	}
-    	System.out.println("Ente the Checkout date (dd-mm-yyyy)");
-    	String dateout=sc.next();
+    	
+    	
+    }
+    void Vacate() throws ParseException {
+    	Scanner sc=new Scanner(System.in);
+    	System.out.println("Enter the Checkout date (dd-mm-yyyy)");
+    	java.util.Date out1;
+    	String date1=sc.next();
     	SimpleDateFormat format1=new SimpleDateFormat("dd-mm-yyyy");
-    	in=format.parse(datein);
+    	out1=format1.parse(date1);
     	try {
-    		in=format1.parse(datein);
+    		out1=format1.parse(date1);
     	}
     	catch(ParseException e) {
     		System.out.println("Enter the correct format(dd-mm-yyyy");
@@ -220,11 +230,8 @@ void FindRoomFromRoomNumber(Room[] myHotel) {
     		
     		
     	}
-    	
-    }
-    void Vacate() {
     	int key2;
-    	Scanner sc=new Scanner(System.in);
+    	
     	System.out.println("Vacate the room: please provide your Room no ");
     	key2=sc.nextInt();
     	//System.out.println("key."+key2);
@@ -238,6 +245,8 @@ void FindRoomFromRoomNumber(Room[] myHotel) {
     	//System.out.println(" ");
     	Vacate();
     	}
+    	
+    	
     }
 
     public  class Room {
